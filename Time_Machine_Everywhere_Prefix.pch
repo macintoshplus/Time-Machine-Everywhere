@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Time Machine Everywhere' target in the 'Time Machine Everywhere' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
