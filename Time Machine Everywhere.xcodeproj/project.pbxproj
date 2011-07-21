@@ -12,6 +12,7 @@
 		293B124512E478AE00E8FC44 /* delete16.png in Resources */ = {isa = PBXBuildFile; fileRef = 293B124312E478AE00E8FC44 /* delete16.png */; };
 		293B124612E478AE00E8FC44 /* ok16.png in Resources */ = {isa = PBXBuildFile; fileRef = 293B124412E478AE00E8FC44 /* ok16.png */; };
 		293B126212E47C5A00E8FC44 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 293B126112E47C5A00E8FC44 /* Security.framework */; };
+		2EBC849C13D889650012CEF3 /* backup.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2EBC849B13D889650012CEF3 /* backup.icns */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -29,12 +30,13 @@
 		293B11DA12E466E800E8FC44 /* TMEController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMEController.h; sourceTree = "<group>"; };
 		293B124312E478AE00E8FC44 /* delete16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delete16.png; path = images/delete16.png; sourceTree = "<group>"; };
 		293B124412E478AE00E8FC44 /* ok16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ok16.png; path = images/ok16.png; sourceTree = "<group>"; };
-		293B126112E47C5A00E8FC44 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		293B126112E47C5A00E8FC44 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = ../../../../../../../System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		293B132612E48AE700E8FC44 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		293B132B12E48BC200E8FC44 /* French */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = French; path = French.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		2EBC849B13D889650012CEF3 /* backup.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = backup.icns; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Time_Machine_Everywhere-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Time_Machine_Everywhere-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Time Machine Everywhere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time Machine Everywhere.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2EBC849B13D889650012CEF3 /* backup.icns */,
 				293B124312E478AE00E8FC44 /* delete16.png */,
 				293B124412E478AE00E8FC44 /* ok16.png */,
 				8D1107310486CEB800E47090 /* Time_Machine_Everywhere-Info.plist */,
@@ -160,6 +163,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0410;
 				ORGANIZATIONNAME = "Jean-Baptiste Nahan";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Time Machine Everywhere" */;
@@ -190,6 +194,7 @@
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				293B124512E478AE00E8FC44 /* delete16.png in Resources */,
 				293B124612E478AE00E8FC44 /* ok16.png in Resources */,
+				2EBC849C13D889650012CEF3 /* backup.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +292,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -299,7 +304,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};
