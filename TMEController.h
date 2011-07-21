@@ -16,6 +16,8 @@
 	NSString * bundleStatus;
 	int sizeBundle;
 	
+	IBOutlet NSImageView * activateOld;
+	IBOutlet NSProgressIndicator * activateOldSP;
 	IBOutlet NSImageView * activate;
 	IBOutlet NSProgressIndicator * activateSP;
 	IBOutlet NSImageView * createSparse;

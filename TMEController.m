@@ -80,6 +80,9 @@
 	//Si la fin du nom est .local il le retire
 	if([[localName substringWithRange:NSMakeRange([localName length]-6, 6)] isEqualToString:@".local"])
 		localName=[localName substringWithRange:NSMakeRange(0, [localName length]-6)];
+    
+	if([[localName substringWithRange:NSMakeRange([localName length]-5, 5)] isEqualToString:@".home"])
+		localName=[localName substringWithRange:NSMakeRange(0, [localName length]-5)];
 	
 	[self setHostName:localName];
 	
@@ -164,6 +167,44 @@
 {
 	NSNotificationCenter * defaultCenter=[NSNotificationCenter defaultCenter];
 	
+    [activateOldSP startAnimation:self];
+    NSArray * argsOld1 = [[NSArray alloc] initWithObjects:@"write",@"/Library/Preferences/com.apple.AppleShareClient",@"afp_host_prefs_version", @"-int", @"1", NULL];
+	NSTask * setOldOption1 = [[NSTask alloc] init];
+	[setOldOption1 setCurrentDirectoryPath:@"/usr/bin/"];
+	//[getName setEnvironment:env];
+	[setOldOption1 setLaunchPath:@"/usr/bin/defaults"];
+	[setOldOption1 setArguments:argsOld1];
+	
+	[setOldOption1 setStandardInput:[NSFileHandle fileHandleWithNullDevice]];
+	
+	/*NSPipe* outputPipe=[NSPipe pipe] ;
+	 [getName setStandardOutput:outputPipe];
+	 NSFileHandle *file;
+	 file = [outputPipe fileHandleForReading];
+	 */
+	[setOldOption1 launch];
+    [setOldOption1 waitUntilExit];
+    
+    NSArray * argsOld2 = [[NSArray alloc] initWithObjects:@"write",@"/Library/Preferences/com.apple.AppleShareClient",@"afp_disabled_uams", @"-array", @"Cleartxt Passwrd", @"MS2.0", @"2-Way Randnum exchange", NULL];
+	NSTask * setOldOption2 = [[NSTask alloc] init];
+	[setOldOption2 setCurrentDirectoryPath:@"/usr/bin/"];
+	//[getName setEnvironment:env];
+	[setOldOption2 setLaunchPath:@"/usr/bin/defaults"];
+	[setOldOption2 setArguments:argsOld2];
+	
+	[setOldOption2 setStandardInput:[NSFileHandle fileHandleWithNullDevice]];
+	
+	/*NSPipe* outputPipe=[NSPipe pipe] ;
+	 [getName setStandardOutput:outputPipe];
+	 NSFileHandle *file;
+	 file = [outputPipe fileHandleForReading];
+	 */
+	[setOldOption2 launch];
+    [setOldOption2 waitUntilExit];
+    
+	[activateOldSP stopAnimation:self];
+	[activateOld setImage:[NSImage imageNamed:@"ok16"]];
+    
 	[activateSP startAnimation:self];
 	
 	NSArray * args = [[NSArray alloc] initWithObjects:@"write",@"com.apple.systempreferences",@"TMShowUnsupportedNetworkVolumes", @"1", NULL];
