@@ -207,7 +207,7 @@
     
 	[activateSP startAnimation:self];
 	
-	NSArray * args = [[NSArray alloc] initWithObjects:@"write",@"com.apple.systempreferences",@"TMShowUnsupportedNetworkVolumes", @"1", NULL];
+	NSArray * args = [[NSArray alloc] initWithObjects:@"write",@"/Library/Preferences/com.apple.systempreferences",@"TMShowUnsupportedNetworkVolumes", @"1", NULL];
 	NSTask * setUnsupported = [[NSTask alloc] init];
 	[setUnsupported setCurrentDirectoryPath:@"/usr/bin/"];
 	//[getName setEnvironment:env];
